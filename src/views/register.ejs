@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!--Head-->
+  <%- include('./partials/head.ejs') %>
+
+  <!--Styles-->
+  <link rel="stylesheet" href="/css/style-register.css" />
+
+  <!--Body Code-->
+  <body>
+    <!--Main Code-->
+    <main>
+      <!--Codigo Correspondiente a Section Formulario-->
+      <div class="register">
+        <form method="POST" action="/user/register" class="datos" id="form" enctype="multipart/form-data">
+          <!--Codigo Correspondiente a Logo de Formulario-->
+          <div class="contenedor-logo">
+            <a href="/"
+              ><img src="/img/at-logo-completo.png" alt="Logo de Alibatec"
+            /></a>
+          </div>
+
+          <h3>Creá tu cuenta</h3>
+          <div>
+            <ul id="error">
+
+            </ul>
+          </div>
+          <!--Codigo Correspondiente a Grupo NOMBRE-->
+          <div class="formulario__grupo" id="grupo__nombre">
+            <label for="name" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+              <input
+                type="text"
+                class="formulario__input"
+                name="name"
+                id="name"
+                placeholder="Nombre"
+                value="<%= locals.old && old.name ? old.name : null %>"
+              >
+              <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                  <%= errors.name.msg %> 
+                </div>
+              <% } %>
+            </div>
+          </div>
+          
+          <!--Codigo Correspondiente a Grupo APELLIDO-->
+          <div class="formulario__grupo" id="grupo__apellido">
+            <label for="lastname" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+              <input
+                type="text"
+                class="formulario__input"
+                name="lastname"
+                id="lastname"
+                placeholder="Apellido"
+                value="<%= locals.old && old.lastname ? old.lastname : null %>"
+              >
+              <% if (locals.errors && errors.lastname) { %>
+                <div class="text-danger">
+                  <%= errors.lastname.msg %> 
+                </div>
+              <% } %>
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a Grupo E-MAIL-->
+          <div class="formulario__grupo" id="grupo__email">
+            <label for="email" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+              <input
+                type="email"
+                class="formulario__input"
+                name="email"
+                id="email"
+                placeholder="E-Mail"
+                value="<%= locals.old && old.email ? old.email : null %>"
+                >
+                <% if (locals.errors && errors.email) { %>
+                  <div class="text-danger">
+                    <%= errors.email.msg %> 
+                  </div>
+                <% } %>
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a CONTRASEÑA-->
+          <div class="formulario__grupo" id="grupo__password">
+            <label for="password" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+              <input
+                type="password"
+                class="formulario__input"
+                name="password"
+                id="password"
+                placeholder="Contraseña"
+              >
+              <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                  <%= errors.password.msg %>
+                </div>
+                <% } %>
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a Tipo usuario-->
+          <div class="formulario__grupo">
+            <label for="category" class="formulario__label">Quieres comprar o vender?</label>
+            <br>
+            <select name="category" id="category">
+                <option value="comprador">Comprador</option>
+                <option value="vendedor">Vendedor</option>
+              
+            </select>
+          </div>
+
+          <!--Codigo Correspondiente a IMAGEN DE USUARIO-->
+          <div class="formulario__grupo">
+            <label for="imagen" class="formulario__label">Imagen de Usuario</label>
+            <div class="formulario__grupo-input">
+              <input
+                type="file"
+                name="image"
+                id="image"
+                multiple
+                class="formulario__input"
+              >
+              <% if (locals.errors && errors.image) { %>
+                <div class="text-danger">
+                  <%= errors.image.msg %>
+                </div>
+                <% } %>
+            </div>
+          </div>
+          
+          <!--Codigo Correspondiente a Terminos y Condiciones-->
+          <div class="formulario__grupo" id="grupo__tyc">
+            <label class="formulario__label">
+              <input
+                class="formulario__checkbox"
+                type="checkbox"
+                name="tyc"
+                id="tyc"
+              />
+              Acepto los Terminos y Condiciones
+            </label>
+          </div>
+
+          <!--Codigo Correspondiente a Boton de Envio-->
+          <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button type="submit" class="formulario__btn">Enviar</button>
+          </div>
+
+          <h3>¿Ya sos usuario?</h3>
+
+          <div>
+            <button class="formulario__btn">
+              <a href="/user/login">Ingresar</a>
+            </button>
+          </div>
+        </form>
+
+        <!--Codigo Correspondiente a Div Banner-->
+        <div class="banner"></div>
+      </div>
+    </main>
+    <script src="/JS/validacionesRegister.js"></script>
+  </body>
+</html>

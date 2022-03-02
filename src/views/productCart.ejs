@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--Head-->
+<%- include('./partials/head.ejs') %>
+
+<!--Styles-->
+<link rel="stylesheet" href="/css/style-prod-cart.css">
+
+<!--Body Code-->
+<body>
+
+<!--Header-->
+<%- include('./partials/header.ejs') %>
+
+<!--Main Code-->
+    <main>
+
+        <div class="facturacion">
+
+            <div class="cabecera">
+                <a href="/"> <img class="logo" src="/img/at-logo-completo.png" alt=""> </a>
+
+                <h2> Selecciona tu Forma de Pago</h2>
+
+                <div class="medio-pago">
+
+                    <h3>Mercado Pago</h3>
+                    <h3>PayU Latam</h3>
+                    <h3>Efectivo</h3>
+                </div>
+            </div>
+
+            <div class="informacion">
+                <div class="errors">
+
+                </div>
+
+                <h2> Información de Contacto</h2>
+                <form action="/" method="GET">
+                    <input type="email" class="grande" name="email" id="email" placeholder="Email@email.com.co">
+ 
+                    <input type="checkbox" class="newsletter" name="newsletter" id="newsletter" >
+                    <label for="newsletter"> Recibir Información sobre nuevos Productos</label>
+
+                    <h2>Información de Envio</h2>
+
+                        <input type="text" class="grande" name="nombre" id="nombre" placeholder="Nombre y Apellido">
+                        <input type="text" class="grande" name="direccion" id="direccion" placeholder="Dirección Completa">
+                        <input type="text" class="grande" name="Provincia" id="Provincia" placeholder="Provincia">
+                        <input type="text" class="grande" name="cp" id="cp" placeholder="CP">
+
+            </div>
+        </div>
+
+        <div class="detalle-pedido">
+
+            <div class="sinProducto">
+
+            </div>
+            <div class="detalle-compra">
+
+            </div>
+            
+            <div class="envio">
+
+                <button type="submit" id="botonBorrar" class="botones botonBorrar">Vaciar Carrito</button>
+            </div>
+            <a href="/"> << Volver al inicio </a>
+
+            <button type="submit" id="botonEnviar" class="botones">Enviar Pedido</button>
+        </form>
+
+        </div>
+    
+    </main>
+
+<!--Footer-->
+<%- include('./partials/footer.ejs') %>
+
+</body>
+<script src="/JS/carrito.js"></script>
+</html>

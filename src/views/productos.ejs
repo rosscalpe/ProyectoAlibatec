@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/header.ejs') %> 
+
+    <main>
+      <article class="ofertas">
+        <% for (let i = 0; i < product.length; i++) { %>
+          <div class="pro-oferta">
+            <div class="imagen-prod">
+                <img
+                  class="imag"
+                  src="<%= product[i].image %>"
+                />
+            </div>       
+          <div class="ofer-detalle">
+            <div class="pro-deta">
+              <div class="tip">
+                <a href="/productos/detail/<%= product[i].id %>"> <%= product[i].model %> </a>
+              </div>
+              
+              <div class="tip">
+                <% for (let j = 0; j < marca.length; j++){ %>
+                  <% if(marca[j].id === product[i].marca_id) { %>
+                    <a href="/productos/detail/<%= product[i].id %>"><%= marca[j].tipo %></a>
+                 <% } %>
+                <% } %>
+                </div>
+                 
+               
+              <a href="/productos/detail/<%= product[i].id %>" class="descu">$<%= product[i].price%></a>
+              <div>
+                <a href="/productos/detail/<%= product[i].id %>" class="descu"><%= product[i].discount %>% OFF</a>
+              </div>
+            </div>
+            <div class="buys">
+              <a href="/productos/detail/<%= product[i].id %>" class="buys-btn">Comprar Ahora</a>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </article>
+
+    </main>
+</body>
+
+<%- include('./partials/footer.ejs') %> 
+
+</html>
+

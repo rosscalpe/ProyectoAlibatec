@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!--Head-->
+  <%- include('./partials/head.ejs')%>
+
+  <!--Body Code-->
+  <body>
+    <!--Main Code-->
+    <main class="main-add">
+      <!--Codigo Correspondiente a Section Formulario-->
+      <div class="register">
+        <form method="POST" action="/productos/add" id="form" class="datos" enctype="multipart/form-data">
+          <!--Codigo Correspondiente a Logo de Formulario-->
+          <div class="contenedor-logo">
+            <a href="/"><img src="/img/at-logo-completo.png" alt="Logo de Alibatec"/></a>
+          </div>
+          <h3>Carga tus productos</h3>
+          
+          <div>
+            <ul id="error">
+
+            </ul>
+          </div>
+          <!--Codigo Correspondiente a model-->
+          <div class="formulario__grupo">
+            <label for="model" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+              <input
+                type="text"
+                class="formulario__input"
+                name="model"
+                id="model"
+                placeholder="Modelo del producto"
+                value="<%= locals.old && old.model ? old.model : null %>"
+              />
+              <% if (locals.errors && errors.model) { %>
+                <div class="alert-warning">
+                  <%= errors.model.msg %> 
+                </div>
+              <% } %>
+            </div>
+          </div>        
+
+          <!--Codigo Correspondiente a price-->
+          <div class="formulario__grupo">
+            <label for="price" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+              <input
+                type="number"
+                class="formulario__input"
+                name="price"
+                id="price"
+                placeholder="Precio"
+                value="<%= locals.old && old.price ? old.price : null %>"
+              />
+              <% if (locals.errors && errors.price) { %>
+                <div class="alert-warning">
+                  <%= errors.price.msg %> 
+                </div>
+              <% } %>
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a Descuento-->
+          <div class="formulario__grupo">
+            <label for="discount" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+                <input
+                  type="number"
+                  class="formulario__input"
+                  name="discount"
+                  id="discount"
+                  placeholder="Descuento"
+                  value="<%= locals.old && old.discount ? old.discount : null %>"
+                />
+                <% if (locals.errors && errors.discount) { %>
+                  <div class="alert-warning">
+                    <%= errors.discount.msg %> 
+                  </div>
+                <% } %>
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a vision general-->
+          <div class="formulario__grupo">
+            <label for="detail" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+                <textarea
+                  class="formulario__input"
+                  name="detail"
+                  id="detail"
+                  placeholder="Caracteristicas">
+                </textarea>
+                <% if (locals.errors && errors.detail) { %>
+                  <div class="alert-warning">
+                    <%= errors.detail.msg %> 
+                  </div>
+                <% } %>
+            </div>
+          </div>
+          
+          <!--Codigo Correspondiente a marca-->
+        <div class="formulario__categoria">
+          <label>Marca</label> 
+          <select name="marca" id="marca">
+           <% for (let i = 0; i < marca.length; i++) { %>
+              <option value="<%= marca[i].id %>">
+                <%= marca[i].tipo %> 
+              </option>
+            <% } %>
+          </select>
+          <% if (locals.errors && errors.marca) { %>
+            <div class="alert-warning">
+              <%= errors.marca.msg %> 
+            </div>
+          <% } %>
+      </div>
+      
+          <!--Codigo Correspondiente a Categoria-->         
+          
+          <div class="formulario__categoria">
+            <label>Categoria</label> 
+            <select name="category" id="category">
+             <% for (let i = 0; i < category.length; i++) { %>
+                <option value="<%= category[i].id %>">
+                  <%= category[i].category %> 
+                </option>
+              <% } %>
+            </select>
+            <% if (locals.errors && errors.category) { %>
+              <div class="alert-warning">
+                <%= errors.category.msg %> 
+              </div>
+            <% } %>
+        </div>
+        
+        
+        <!--Codigo Correspondiente al estado-->
+        <div class="formulario__grupo">
+          <label>Estado</label> 
+          <select name="estado" id="estado">
+           <% for (let i = 0; i < estado.length; i++) { %>
+              <option value="<%= estado[i].id %>">
+                <%= estado[i].estado %> 
+              </option>
+            <% } %>
+          </select>
+          <% if (locals.errors && errors.estado) { %>
+            <div class="alert-warning">
+              <%= errors.estado.msg %> 
+            </div>
+          <% } %>
+      </div>
+      
+
+          <!--Codigo Correspondiente a Imagen-->
+          <div class="formulario__grupo">
+            <label for="imagen" class="formulario__label">Imagen de Producto</label>
+            <div class="formulario__grupo-input">
+              <input
+                type="file"
+                name="imagen"
+                multiple
+                class="formulario__input"
+                id="image"
+              />
+              <% if (locals.errors && errors.imagen) { %>
+                <div class="alert-warning">
+                  <%= errors.imagen.msg %> 
+                </div>
+              <% } %>
+            </div>
+          </div>
+           
+          <!--Codigo Correspondiente a Boton de Carga-->
+          <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button type="submit" class="formulario__btn">
+              Cargar
+            </button>
+          </div>
+        </form>
+
+        <!--Codigo Correspondiente a Div Banner-->
+        <div class="banner"> </div>
+        
+      </div>
+    </main>
+  </body>
+  <script src="/JS/validacionesProductAdd.js"></script>
+</html>

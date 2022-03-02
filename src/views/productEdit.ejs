@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!--Head-->
+  <%- include('./partials/head.ejs')%>
+
+  <!--Styles-->
+  <link rel="stylesheet" href="/css/styles-prod-AddEdit.css"/>
+
+  <!--Body Code-->
+  <body>
+    <!--Main Code-->
+    <main>
+      <!--Codigo Correspondiente a Section Formulario-->
+      <div class="register">
+        <form method="POST" action="/productos/edit/<%=producto.id%>?_method=PUT" class="datos" enctype="multipart/form-data">
+          <!--Codigo Correspondiente a Logo de Formulario-->
+          <div class="contenedor-logo">
+            <a href="/"><img src="/img/at-logo-completo.png" alt="Logo de Alibatec"/></a>
+          </div>
+          <h3>Edita tu Producto</h3>
+          <div>
+            <ul id="error">
+
+            </ul>
+          </div>
+          <% for (let i = 0; i < marca.length; i++) { %>
+            <% if (marca[i].id == producto.marca_id){ %>
+
+              <h3><%= marca[i].tipo %></h3>
+
+           <% } %>
+
+         <% } %>
+          
+          <!--Codigo Correspondiente a model-->
+          <div class="formulario__grupo">
+            <label for="model" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+              <input
+                type="text"
+                class="formulario__input"
+                name="model"
+                id= 'model'
+                value="<%=producto.model%>"
+              />
+              <% if (locals.errors && errors.model) { %>
+                <div class="alert-warning">
+                  <%= errors.model.msg %> 
+                </div>
+              <% } %>
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a Descripción-->
+          <div class="formulario__grupo">
+            <label for="detail" class="formulario__label"></label>
+            <div class="formulario__grupo-input">
+                <input
+                  type="text"
+                  class="formulario__input"
+                  name="detail"
+                  id="detail"
+                  value="<%=producto.detail%>"
+                />
+                <% if (locals.errors && errors.detail) { %>
+                  <div class="alert-warning">
+                    <%= errors.detail.msg %> 
+                  </div>
+                <% } %>
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a Imagen-->
+          <div class="formulario__grupo">
+            <img
+            class="imag"
+            src="<%= producto.image %>"/>
+
+            <label for="imagen" class="formulario__label">Imagen de Producto</label>
+            <div class="formulario__grupo-input">
+              <input
+                type="file"
+                name="imagen"
+                id="image"
+                multiple
+                class="formulario__input"
+                value="<%= producto.image %>"
+                
+              />
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a Categoria-->
+          <div class="formulario__grupo">
+            <label for="categoria" class="formulario__label">
+              Selecciona su Categoria</label>
+            <div class="formulario__categoria">
+              <label for="category" class="formulario__label">Categoria</label> 
+              <select name="category" id="category">
+                <% for (let i = 0; i < category.length; i++) { %>
+                  <% if (category[i].id == producto.categoria_id){ %>
+      
+                    <option value="<%= category[i].id %>" selected>
+                      <%= category[i].category %> 
+                    </option>
+      
+                    <% } else { %>
+                      <option value="<%= category[i].id %>">
+                        <%= category[i].category %> 
+                      </option>
+      
+                    <% } %>
+               <% } %>
+              </select>
+            </div>
+
+          <!--Codigo Correspondiente a Marca de Producto-->
+          <div class="formulario__grupo">
+            <label for="marca" class="formulario__label">Marca</label>
+            <select name="marca" id="marca">
+              <% for (let i = 0; i < marca.length; i++) { %>
+                <% if (marca[i].id == producto.marca_id){ %>
+    
+                  <option value="<%= marca[i].id %>" selected>
+                    <%= marca[i].tipo %> 
+                  </option>
+    
+               <% } else { %>
+                <option value="<%= marca[i].id %>">
+                  <%= marca[i].tipo %> 
+                </option>
+
+              <% } %>
+    
+             <% } %>
+            </select>
+          </div>
+
+          <!--Codigo Correspondiente a price-->
+          <div class="formulario__grupo">
+            <label for="price" class="formulario__label">Precio</label>
+            <div class="formulario__grupo-input">
+              <input
+                type="number"
+                class="formulario__input"
+                name="price"
+                id="price"
+                value="<%=producto.price%>"
+              />
+              <% if (locals.errors && errors.price) { %>
+                <div class="alert-warning">
+                  <%= errors.price.msg %> 
+                </div>
+              <% } %>
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a Descuento-->
+          <div class="formulario__grupo">
+            <label for="discount" class="formulario__label">Descuento</label>
+            <div class="formulario__grupo-input">
+                <input
+                  type="number"
+                  class="formulario__input"
+                  name="discount"
+                  id="discount"
+                  value="<%=producto.discount%>"
+                />
+                <% if (locals.errors && errors.discount) { %>
+                  <div class="alert-warning">
+                    <%= errors.discount.msg %> 
+                  </div>
+                <% } %>
+            </div>
+          </div>
+
+          <!--Codigo Correspondiente a Boton de Carga-->
+          <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button type="submit" class="formulario__btn">
+              Guardar cambios
+            </button>
+          </div>
+        </form>
+
+      </div>
+      <!--Codigo Correspondiente a Div Banner-->
+      <div class="banner">
+      </div>
+    </main>
+  </body>
+  <script src="/JS/validacionesProdEdit.js"></script>
+</html>

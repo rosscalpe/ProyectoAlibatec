@@ -1,0 +1,761 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+/*Estilo header*/
+.header {
+    width: 100%;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 18px;
+    border-bottom: solid 2px rgb(0,171,240);
+}
+.logo {
+    width: 50%;
+}
+.header-phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    width: 60%;
+}
+.header-menu {
+    padding: 5px;
+    padding-top: 10px;
+    margin: 5px 10px;
+    background-color: rgb(199,0,143);
+    width: 40px;
+    text-align: center;
+    border-radius: 20%;
+    height: 40px;
+    position: relative;
+}
+.menu {
+    background-color: rgb(124,217,51);
+    width: 150px;
+    border-radius: 5%;
+    position: absolute;
+    top: 40px;
+    right: 2px;
+    overflow: hidden;
+    opacity: 0;
+}
+.menu-item-container-submenu {
+    position: relative;
+    padding-top: 10px;
+}
+.menu-item a{
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+}
+.submenu-pro a, .submenu-cuenta a{
+    background-color: rgb(254,100,26);
+}
+.menu-item-container-submenu:hover .submenu-pro {
+    overflow: visible;
+    opacity: 1;
+    transition: all 800ms;
+}
+.menu-item-container-submenu:hover .submenu-cuenta {
+    overflow: visible;
+    opacity: 1;
+    transition: all 800ms;
+}
+.submenu-pro, .submenu-cuenta {
+    height: 0;
+    overflow: hidden;
+    transition: all 800ms;
+    position: absolute;
+    opacity: 0;
+    z-index: 1000;
+}
+.menu-item:hover {
+    background-color: rgb(124,217,51);
+    font-weight: bold;
+    font-style: italic;
+    transition: all 800ms;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.header-menu a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav-complete {
+    display: none;
+}
+.carrusel {
+    display: none;
+}
+/*comentario*/
+.inv-text {
+    text-align: center;
+    text-shadow: 0 0 1px rgb(0,171,240);
+    font-size: 18px;
+    color: rgb(0,171,240);
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px rgb(199,0,143);
+}
+.cita-text {
+    text-align: center;
+    font-style: italic;
+    border: dotted 1px rgb(124,217,51);
+    border-radius: 2%;
+    padding: 10px;
+    font-weight: lighter;
+}
+/*Estilo Productos destacados*/
+.destacados {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+.images {
+    width: 90%;
+    margin-left: 20px;
+}
+.producto {
+    border: solid 1px rgb(254,100,26);
+    border-radius: 5%;
+    margin-bottom: 15px;
+    width: 80%;
+    margin-top: 15px;
+    margin-left: 40px;
+}
+.producto a{
+    text-decoration: none;
+}
+
+.detalle-producto {
+    border-top: solid 1px rgb(252, 173, 136);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    margin: 0 10px;
+}
+.buy {
+    text-align: center;
+    padding: 15px;
+}
+.buy-btn {
+    border-top: solid 1px rgb(124,217,51);
+    border-bottom: solid 1px rgb(124,217,51);
+    padding: 5px;
+    color: rgb(54, 52, 52);
+    font-weight: bold;
+}
+.tipo a{
+    color: black;
+    font-weight: bold;
+}
+.precio {
+    color: rgb(124,217,51);
+    font-weight: 700;
+}
+.ver-todo {
+    width: 40%;
+    margin: auto;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgb(124,217,51);
+    border-radius: 10px;
+    padding: 5px;
+    }
+.ver-todo a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.ofrecimiento {
+    display: none;
+}
+.carrusel-de-marcas {
+    display: none;
+}
+/*estilos separacion OFERTAS*/
+.linea-separacion {
+    display: block;
+    margin: auto;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(0,171,240);
+    border-bottom: solid 1px rgb(0,171,240);
+    width: 50%;
+    padding: 5px;
+}
+
+/*Estilo de OFERTAS*/
+article.ofertas {
+    display:flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+}
+.imag {
+    width: 90%;
+    height: 26vh;
+    margin-left: 15px;
+    padding-top: 15px;
+    object-fit: contain;
+    
+}
+.pro-oferta {
+    border: solid 1px rgb(124,217,51);
+    border-radius: 5%;
+    margin-bottom: 15px;
+    width: 80%;
+    margin-top: 15px;
+    margin-left: 40px;
+}
+.pro-oferta a{
+    text-decoration: none;
+}
+.pro-deta {
+    border-top: solid 1px rgb(136, 252, 142);
+    padding: 15px 10px;
+    margin: 0 10px;
+}
+.tip a{
+    color: black;
+    font-weight: 900;
+}
+.descu {
+    color: rgb(124,217,51);
+    font-weight: bold;
+}
+.buys {
+    text-align: left;
+    padding: 15px 5px;
+    margin-left: 10px;
+    text-align: center;
+}
+.buys-btn {
+    border: solid 1px rgb(136, 252, 142);
+    border-radius: 5px;
+    padding: 5px;
+    color: rgb(54, 52, 52);
+    font-weight: bold;
+}
+/*Estilo Footer*/
+.footer-complete {
+    display: block;
+    padding: 10px;
+    border-top: solid 2px rgb(0,171,240);
+}
+.suscribirse {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 20px;
+    border-bottom: solid 2px rgb(0,171,240);
+}
+.sus-mail {
+    padding-top: 20px;
+}
+.insert-email {
+    border-radius: 5px
+}
+.enviar-sus {
+    color: rgb(254,100,26);
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: rgb(254,100,26);
+}
+.contact-redes {
+    background-color: #ebebeb;
+    padding: 10px;
+    border-radius: 5px;
+}
+.nos {
+    color: rgb(54, 52, 52);
+    text-decoration: underline;
+}
+.nos-met-con {
+    text-align: center;
+}
+.nos-met-con ul li a{
+    text-decoration: none;
+    color: rgb(54, 52, 52);
+}
+.nos-met-con li {
+    margin-bottom: 5px;
+}
+#icon {
+    color: rgb(54, 52, 52);
+}
+.iconos-redes ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.iconos-redes ul li {
+    width: 50%;
+    text-align: center;
+}
+.iconos-redes ul li a {
+    border: solid 1px rgb(124,217,51);
+    border-radius: 50%;
+    padding: 15px;
+}
+.red {
+    color: rgb(254,100,26);
+    text-align: center;
+}
+#icon-red {
+    color: rgb(124,217,51);
+    font-size: 20px;
+}
+.logo-final {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    border-bottom: solid 2px rgb(199,0,143);
+}
+.logo-footer {
+    width: 30%;  
+}
+.copyright {
+    font-size: 8px;
+    text-align: center;
+}
+
+@media (min-width: 768px){
+    /*Estilo productos destacados*/
+    .inv-text {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 900;
+        color: rgb(0,171,240);
+        box-sizing: border-box;
+        box-shadow: 0px 1px 2px rgb(199,0,143);
+    }
+    .cita-text {
+        text-align: center;
+        font-size: 27px;
+        font-style: italic;
+        padding: 10px;
+        font-weight: lighter;
+        border: none;
+    }
+    .destacados {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+    }
+    .images {
+        width: 80%;
+        margin-left: 20px;
+    }
+    .producto {
+        width: 30%;
+    }
+    .ver-todo {
+        width: 30%;
+    }
+    /*Estilos de Ofrecimiento*/
+    .ofrecimiento {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 30px;
+    }
+    .ofre-img {
+        width: 30%;
+        position: relative;
+    }
+    .imgpro {
+        width: 100%;
+    }
+    .descrip {
+        position: absolute;
+        bottom: 25px;
+        left: 5px;
+        padding: 10px;
+    }
+    .descrip a {
+        text-decoration: none;
+        background-color: white;
+        padding: 10px;
+        color:rgb(0,171,240);
+        font-size: 14px;
+        font-weight: 900;
+        border: solid 2px rgb(0,171,240);
+        border-radius: 5px;
+    }
+    .titulo {
+        font-size: 18px;
+        color: rgb(199,0,143);
+        font-weight: 900;
+        border-bottom: solid 2px rgb(0,171,240);
+    }
+    /*Estilo carrusel de marcas*/
+    .carrusel-de-marcas {
+        display: none;
+    }
+    /*estilos separacion OFERTAS*/
+    .linea-separacion {
+        width: 30%;
+        text-shadow: 1px 1px 1px rgb(0,171,240);
+        border-bottom: solid 1px rgb(0,171,240);
+    }
+    /*Estilo de OFERTAS*/
+    .ofertas {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 20px;
+    }
+    .pro-oferta {
+        width: 42%
+    }
+    /*estilo Footer*/
+    .logo-footer {
+        width: 20%;  
+    }
+}
+@media (min-width: 1024px){
+    /*Estilo header*/
+    .nav-complete{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 0;
+        width: 100%;
+    }
+    .nav-complete li a {
+        font-size: 18px;
+    }
+    .header-menu {
+        display: none;
+    }
+    .nav-bar{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .lista-horizontal {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        font-size: 22px;
+    }
+    .header-logo{
+        display: flex;
+        width: 100%
+    }
+    .lista-horizontal a{
+        color: black;
+        text-decoration: none;
+        font-weight: bold; 
+    }
+    .horizontal-item {
+        display: flex;
+        margin: auto;
+        margin-right: 40px;
+        padding: 0 15px;
+        font-weight: bold;
+        position: relative;
+    }
+    .header-content {
+        justify-content: space-between;
+    }
+    #iconos-header {
+        color: rgb(199,0,143);
+        margin-left: 5px;
+        text-align: center;
+    }
+    .submenu {
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+        transition: all .3s;
+        z-index: 1000; 
+        opacity: 0;
+    }
+    .submenu li a {
+        display: block;
+        background-color: rgb(0,171,240);
+        padding: 10px;
+        color: rgb(54, 52, 52);
+    }    
+    .submenu li a:hover {
+        background-color: rgb(199,0,143);
+        border-radius: 5%;
+        color: white;
+        font-weight: bold;
+        transition: ease-in 450ms;
+    }
+/*Estilo carrusel*/
+    .carrusel {
+        display: block;
+        width: 100%;
+        margin: auto;
+        padding: 30px 0;
+        overflow: hidden;
+    }
+    ul, li{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .slider {
+        display: flex;
+        width: 300%;
+        animation: cambio 20s infinite alternate;
+        animation-timing-function: ease-in ;
+    }
+    .slider li {
+        width: 100%;
+    }
+    .slider img {
+        width: 100%;
+        object-fit: cover;
+        height: 650px;
+    }
+    @keyframes cambio {
+      0% { margin-left: 0;}
+      15% { margin-left: 0;}
+
+      20% { margin-left: -100%;} 
+      35% { margin-left: -100%;}
+
+      40% { margin-left: -200%;}
+      55% { margin-left: -200%;}
+    }
+    /*Estilo Productos destacados*/
+    .destacados {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 30px;
+    }
+    .producto {
+        width: 29%;
+    }
+    .tipo a {
+        color: black;
+    }
+    .images {
+        width: 15vw;
+        margin-left: 25px;
+    }
+    .producto a {
+        font-size: 24px;
+    }
+    .producto:hover {
+        box-shadow: 0px 0px 10px rgb(252, 173, 136);
+    }
+    .buy-btn:hover {
+        box-shadow: 0px 0px 10px rgb(136, 252, 142);
+        color: rgb(124,217,51);
+        font-weight: 900;
+    }
+    .buy a{
+        color: black;
+    }
+    .ver-todo {
+        width: 15%;
+        font-size: 20px;
+        padding: 10px; 
+        transition: all 450ms;
+    }
+    .ver-todo:hover a {
+        color: rgb(124,217,51);
+        font-weight: bold;
+    }
+    .ver-todo:hover {
+        background-color: white;
+        box-shadow: 1px 1px 1px 2px rgb(136, 252, 142)
+    }
+    /*Estilos de Ofrecimiento*/
+    .ofrecimiento {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 30px;
+        border-bottom: solid 2px rgb(0,171,240);
+    }
+    .ofre-img {
+        width: 30%;
+        position: relative;
+    }
+    .imgpro {
+        width: 100%;
+    }
+    .descrip {
+        position: absolute;
+        bottom: 80px;
+        left: 20px;
+        padding: 10px;
+    }
+    .descrip a {
+        text-decoration: none;
+        background-color: white;
+        padding: 10px;
+        color:rgb(0,171,240);
+        font-size: 20px;
+        font-weight: 900;
+        border: solid 2px rgb(0,171,240);
+        border-radius: 5px;
+    }
+    .titulo {
+        font-size: 24px;
+        color: rgb(199,0,143);
+        font-weight: 900;
+        border-bottom: solid 2px rgb(0,171,240);
+    }
+    .boton-ver:hover {
+        background-color: rgb(0,171,240);
+        color: white;
+        font-weight: 700;
+    }
+    /*Estilos carrusel de marcas*/
+    .carrusel-de-marcas {
+        display: block;
+        width: 100%;
+        margin: auto;
+        padding: 30px 0;
+        overflow: hidden;
+    }
+    .marcas {
+        display: flex;
+        justify-content: space-between;
+        width: 300%;
+        animation: cambio 20s infinite alternate;
+        animation-timing-function: ease-in ;
+    }
+    .marcas img {
+        width: 50%;
+    }
+    @keyframes cambio {
+      0% { margin-left: 0;}
+      15% { margin-left: 0;}
+
+      20% { margin-left: -100%;} 
+      35% { margin-left: -100%;}
+
+      40% { margin-left: -200%;}
+      55% { margin-left: -200%;}
+    }
+    /*estilos separacion OFERTAS*/
+    .linea-separacion {
+        text-shadow: 1px 1px 1px rgb(0,171,240);
+        border-bottom: solid 1px rgb(0,171,240);
+        padding: 10px 0;
+        width: 30%;
+        font-size: 30px;
+    }
+    /*Estilo de OFERTAS*/
+    .pro-oferta {
+        width: 22%;
+        margin-left: 0;
+    }
+    .pro-deta {
+        font-size: 20px;
+    }
+    .buys-btn {
+        font-size: 20px;
+    }
+    .buys-btn:hover {
+        box-shadow: 0px 0px 10px rgb(136, 252, 142);
+        color: rgb(124,217,51);
+        font-weight: 900;
+    }
+    /*Estilo Footer*/
+    .texto-sus {
+        width: 45%;
+        margin-left: 20px;
+    }
+    .sus-mail {
+        width: 45%;
+        margin-left: 20px;
+        text-align: end;
+    }
+    .suscribirse {
+        padding: 10px
+    }
+    .suscrib-text {
+        font-size: 20px;
+    }
+    .enterate {
+        font-size: 15px;
+        color: rgb(54, 52, 52);
+    }
+    .insert-email {
+        font-size: 20px;
+        width: 70%;
+    }
+    .enviar-sus {
+        width: 20%;
+        padding: 5px;
+    }
+    .enviar-sus:hover {
+        background-color: rgb(254,100,26);
+        color: white;
+        font-weight: 700;
+    }
+    .contact-redes {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nos-met-con {
+        width: 22%;
+    }
+    .nos {
+        font-size: 18px;
+        text-align: start;
+    }
+    .nos-met-con li a {
+        font-size: 14px;
+        
+    }
+    #icon {
+        color:rgb(54, 52, 52)
+    }
+    .ul-conct li:hover{
+        text-decoration: underline;
+    }
+    .nos-met-con li {
+        margin-bottom: 15px;
+        text-align: start;
+    }
+    .red {
+        font-size: 18px;
+        margin-bottom: 50px;
+        color: rgb(54, 52, 52)
+    }
+    #icon-red {
+        font-size: 35px;
+        color: rgb(54, 52, 52);
+    }
+    #icon-red:hover {
+        box-shadow: 1px 1px 2px 2px rgb(254,100,26);
+    }
+    .iconos-redes ul li a {
+        border: none
+    }
+    .logo-final {
+        display: block;
+    }
+    .logo-footer {
+        width: 10%;  
+    }
+    .copyright {
+        font-size: 8px;
+    }
+}

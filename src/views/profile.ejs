@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs')%>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <div class="profile-complete">
+            <div class="profile">
+                <img class="profile-avatar" src="<%= user.image %>" alt="">
+            </div>
+            <div class="info-profile">
+                <h2>Datos Personales:</h2>
+                <h3><%= user.name %></h3>
+                <h3><%= user.email %></h3>
+                <h3><%= user.categoria %> </h3>
+               
+                <div class="prod-edit-button">
+                
+                <a href="/productos/add"><button class="button-pedido">Publica tu producto</button></a>
+                <a href="/user/userEdit/<%= user.id %> "><button class="button-pedido">Editar usuario</button></a>
+                <form action="/user/delete/<%= user.id %>?_method=DELETE" method="POST">
+                    <button class="button-pedido">Eliminar Perfil</button>
+                </form>
+
+                </div>
+            </div>
+        </div>
+        
+    </main>
+</body>
+<%- include('./partials/footer.ejs')  %>
+</html>

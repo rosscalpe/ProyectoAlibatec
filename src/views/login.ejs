@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--Head-->
+<%- include('./partials/head.ejs') %>
+
+<!--Styles-->
+<link rel="stylesheet" href="/css/style-login.css">
+
+<!--Body Code-->
+<body>
+   
+<!--Main Code-->
+    <main>
+
+        <div class="login">
+
+            <div class="datos">
+
+                <div class="contenedor-logo">
+                    <a href="/"><img src="/img/at-logo-completo.png" alt="Logo de Alibatec"></a>
+                </div>
+
+                <h3> Ingresa a tu cuenta</h3>
+                <div>
+                    <ul id="error">
+        
+                    </ul>
+                  </div>
+                  <!--Codigo Correspondiente a formulario  -->
+
+                <form action="/user/login" method="POST" id="form"> 
+
+                    <div class="nombre-usuario">
+                        <label for="email"></label>
+                        <input class="grande" type="email" name="email" id="email" placeholder="E-Mail">
+                        <% if (locals.errors && errors.email) { %>
+                            <h5 class="feedback"><%= errors.email.msg %></h5>
+                        <% } %>
+                    </div>
+        
+                    <div class="password">
+                        <label for="password"></label>
+                        <input class="grande" type="password" name="password" id="password" placeholder="Contraseña">
+                        <% if (locals.errors && errors.password) { %>
+                            <h5 class="feedback"><%= errors.password.msg %></h5>
+                        <% } %>
+                    </div>
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input"name="remember_user">Recordar mi usuario
+                        </label>
+                    </div>
+        
+                    <div class="botones">
+                        <button type="submit"> Ingresar</button>
+
+                    </div>
+                        
+                    <p>¿Olvidaste tu Contraseña?</p>
+
+                    <h3>¿Aun no tienes cuenta?</h3>
+
+                    <div class="botones">
+                        <button><a href="/user/register">Crear Cuenta</a></button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!--Codigo Correspondiente a banner  -->
+            <div class="banner">       
+            </div>
+
+        </div>
+
+
+    </main>
+<script src="/JS/validacioneLogin.js"></script>
+
+</body>
+
+</html>

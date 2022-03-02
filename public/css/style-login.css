@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    background-color: #adadad;
+    padding: 5px;
+}
+
+/* ----- Div del formulario----*/
+
+
+.datos{
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+    margin: 30px auto;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 90px;   
+}
+
+.contenedor-logo{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.contenedor-logo img{
+    width: 100%;
+    margin-top: 25px;
+}
+
+h3{
+    font-size: 20px;
+    margin: 30px auto;
+}
+.grande{
+    width: 70%;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid grey;
+    border-radius: 8px;
+}
+
+.botones button{
+    width: 70%;
+    height: 35px;
+    margin-top: 15px;
+    background-color: #32ABF0;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 17px;
+    transition: all 450ms;
+    ;
+}
+.botones a {
+    text-decoration: none;
+    color: white;
+}
+.botones a:hover {
+    color: #32ABF0;
+}
+.botones button:hover{
+    background-color: white;
+    color: #32ABF0;
+    border: 1px solid #32ABF0; 
+}
+p {
+    margin-top: 30px;
+    color: #7cd933;
+    text-decoration: underline;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #b7b7b7;
+}
+.feedback {
+    color: red;
+    font-weight: 500;
+}
+.is-valid{
+    border: 1px solid #44d62d !important;
+}
+
+.is-invalid {
+    border: 1px solid red !important;
+}
+/* ----- Div del banner----*/
+
+.banner{
+    width: 64%;
+    float: right;
+    display: none;
+}
+
+/* ------ Media Querys--------*/
+
+@media (min-width: 950px){
+
+    main div.login{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .banner{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        background-image: url("/img/marketing/at-marketing1.jpg");
+        background-position-x: center;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 3px;
+        width: 63%;
+        border-radius: 5px;
+    }
+    .datos{
+        width: 35%;
+        float: left;
+        margin: 4px;
+    }
+
+}
