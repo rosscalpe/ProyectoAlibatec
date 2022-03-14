@@ -13,6 +13,9 @@ const validationProductEdit = require('../../middlewares/validationProdEdit');
 
 // Ruta TODOS LOS PRODUCTOS
 router.get('/', dbController.productList);
+router.get('/category/computadoras', dbController.categoryComputadoras);
+router.get('/category/portatiles', dbController.categoryPortatiles);
+router.get('/category/accesorios', dbController.categoryAccesorios);
 
 //RUTA DETALLE DE UN PRODUCTO
 router.get('/detail/:id' , dbController.detalle);

@@ -19,7 +19,6 @@ const dbController = {
         })
         .then(product => {
             res.render('productDetail', { product })
-            console.log(product)
         })
         .catch (err => console.log (err))
     },
@@ -110,6 +109,43 @@ const dbController = {
             .catch (err => console.log (err))
         }  
     },
+    categoryComputadoras: (req, res) => {
+        let producto = db.Producto.findAll({
+            where: { categoria_id: 2}
+        })
+        let marca = db.Marca.findAll();
+
+        Promise.all([producto, marca])
+        .then(([product, marca]) => {
+            console.log(product)
+            res.render('categorys', { product, marca })
+        })
+        .catch (err => console.log (err))
+    },
+    categoryPortatiles: (req, res) => {
+        let producto = db.Producto.findAll({
+            where: { categoria_id: 1}
+        })
+        let marca = db.Marca.findAll();
+
+        Promise.all([producto, marca])
+        .then(([product, marca]) => {
+            res.render('categorys', { product, marca })
+        })
+        .catch (err => console.log (err))
+    },
+    categoryAccesorios: (req, res) => {
+        let producto = db.Producto.findAll({
+            where: { categoria_id: 3}
+        })
+        let marca = db.Marca.findAll();
+
+        Promise.all([producto, marca])
+        .then(([product, marca]) => {
+            res.render('categorys', { product, marca })
+        })
+        .catch (err => console.log (err))
+    },
     delete: function(req, res) {
         db.Producto.destroy({
             where: {id: req.params.id}
@@ -117,8 +153,8 @@ const dbController = {
             res.redirect('/productos')
     },
     carritoCompras: (req, res) => {
-        let producto = db.Producto.findAll()
-        let marcas = db.Marca.findAll()
+        let producto = db.Producto.findAll();
+        let marcas = db.Marca.findAll();
 
         Promise.all([producto, marcas])
             .then(function([product, marca]){
