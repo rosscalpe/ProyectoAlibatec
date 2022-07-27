@@ -12,9 +12,6 @@ const router = require('./src/routes/mainRoutes');
 const productRouter = require('./src/routes/productsRoutes');
 const userRouter = require('./src/routes/userRoutes');
 
-//ROUTES API
-const productsAPIRouter = require('./src/routes/APIS/productsApiRoutes');
-const usersApiRouter = require('./src/routes/APIS/usersApiRoutes');
 
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
@@ -35,10 +32,6 @@ app.set('view engine', 'ejs');
 app.use('/', router);
 app.use('/productos' , productRouter);
 app.use('/user' , userRouter);
-
-//APIS 
-app.use('/api/products', productsAPIRouter);
-app.use('/api/users', usersApiRouter)
 
 
 // Hasta aca
