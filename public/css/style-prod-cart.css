@@ -34,23 +34,35 @@ main div img.logo{
     margin: 35px
 
 }
-
+.volver-inicio{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: rgb(124,217,51);
+    font-weight: bold;
+    text-decoration: none;
+    font-weight: 700;
+}
 div .medio-pago{
-    border: 1px solid #002197;
+    border: 1px solid rgb(124,217,51);
     padding: 15px;
     border-radius: 10px;
     margin: 5px 55px;
 }
-div .medio-pago h3{
+div .medio-pago .h3{
     margin: auto 10px;
-    background-color: #002197;
+    background-color: #32ABF0;
     color: white;
     padding: 10px;
     border-radius: 15px;
     width: 75%;
     font-size: 17px;
-   margin: 10px auto;
-
+}
+.medio-pago .h3:hover{
+    background-color: white;
+    color: #32ABF0;
+    font-weight: bold;
+    border: 1px solid #32ABF0;
 }
 
 .grande{

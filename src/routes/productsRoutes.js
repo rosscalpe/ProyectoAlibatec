@@ -10,6 +10,7 @@ const upload = require('../../middlewares/multerProduct');
 const dbController = require('../controllers/dbProductsController');
 const validationProducts = require('../../middlewares/validationProducts');
 const validationProductEdit = require('../../middlewares/validationProdEdit');
+const autenticacion = require('../../middlewares/autenticacion');
 
 // Ruta TODOS LOS PRODUCTOS
 router.get('/', dbController.productList);
@@ -21,10 +22,10 @@ router.get('/category/accesorios', dbController.categoryAccesorios);
 router.get('/detail/:id' , dbController.detalle);
 
 // RUTA CARRITO DE COMPRAS
-router.get('/shop', dbController.carritoCompras);
+router.get('/shop', autenticacion, dbController.carritoCompras);
 
 //RUTA CREAR PRODUCTO
-router.get('/add/', dbController.create); 
+router.get('/add/', autenticacion, dbController.create); 
 router.post('/add' , upload.single('imagen'), validationProducts, dbController.store);
 
 //RUTA EDITAR PRODUCTO

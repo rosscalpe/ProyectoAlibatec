@@ -6,11 +6,12 @@ const app = express();
 const path = require('path');
 const cookies = require('cookie-parser');
 const methodOverride = require('method-override');
-const usuarioapp = require('./middlewares/usuarioapp')
+const usuarioapp = require('./middlewares/usuarioapp');
 
 const router = require('./src/routes/mainRoutes');
 const productRouter = require('./src/routes/productsRoutes');
 const userRouter = require('./src/routes/userRoutes');
+
 
 
 app.use(express.static('public'));

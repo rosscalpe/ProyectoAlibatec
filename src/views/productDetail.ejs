@@ -35,7 +35,7 @@
                                 <a href="/productos/edit/<%= product.id %>"><button class="button-pedido">Editar
                                 producto</button></a>
                                 <div class="prod-edit-button">
-                                    <form action="/productos/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                    <form action="/productos/delete/<%= product.id %>?_method=DELETE" method="POST" id="form-delete">
                                     <button type="submit" class="button-pedido" id=""> Eliminar
                                     producto</button>
                                     </form>
@@ -105,7 +105,10 @@
     </body>
     <%- include('./partials/footer.ejs') %>
     
-       
-        <script src="/JS/addProducts.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="/JS/addProducts.js"></script>
+    <script src="/JS/deleteProducts.js"></script>
 
 </html>

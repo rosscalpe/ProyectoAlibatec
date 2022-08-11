@@ -10,9 +10,14 @@ const dbUserController = {
             res.render('register')
     },
     userInDB: async (req, res) => {
-        const {email} = req.body;
-        db.Usuarios.findOne({email: email})
-        .then(user)
+        await db.Usuarios.findOne({where: {email: req.body.email}})
+        .then(user =>{
+            if(user){
+            return user;
+            }else{
+                return false;
+            }
+        })
     },
     processRegister: (req, res) => {
         let resultValidation = validationResult(req);

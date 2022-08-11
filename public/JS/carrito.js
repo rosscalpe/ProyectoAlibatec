@@ -1,5 +1,3 @@
-const e = require("express");
-
 window.onload = function () {
 
   if (typeof localStorage.carrito == "undefined" || typeof localStorage.carrito == "[]"
@@ -41,7 +39,6 @@ window.onload = function () {
     `
     div2.innerHTML+= contenido2
   }
-
   let botonBorrar = document.querySelector("#botonBorrar");
   botonBorrar.addEventListener('click', function(e) {
     e.preventDefault();
@@ -55,54 +52,37 @@ window.onload = function () {
     location.reload();
   });
 let comprar = document.getElementById("botonEnviar");
-let formularioCompra = document.querySelector('form');
-let errores = [];
 let inputCompra = document.querySelectorAll('.grande');
-inputCompra.forEach((input)=> {
-  if(input.value == 'undefined' || input.value == ''){
-      errores.push(input.name)
-  }
-} )
-comprar.addEventListener('click', ()=> {
+
+comprar.addEventListener('click', (e)=> {
   if(typeof localStorage.carrito == "undefined" || typeof localStorage.carrito == "[]"){
+    e.preventDefault();
     Swal.fire({
       icon: 'error',
       title: 'No hay productos agregados',
       showConfirmButton: false,
-      timer: 6000
-    })
-    redirect("/productos");
-  }else if(errores.length > 0){
-    e.preventDefault();
-        Swal.fire({
-            icon: 'error',
-            title: 'Por favor completa los campos',
-            showConfirmButton: false,
-            timer: 4000
-        })
-  // }else{
-  //   Swal.fire({
-  //     icon: 'success',
-  //     title: 'Compra realizada con exito',
-  //     showConfirmButton: false,
-  //     timer: 7000
-  //   })
-  //   localStorage.clear();
-  //   location.reload();
-  //   location.href = '/'
-  // }     
+      timer: 5000
+    })  
+}else if(inputCompra[0].value == "" || inputCompra[1].value == ""){
+  e.preventDefault();
+  Swal.fire({
+    icon: 'error',
+    title: 'No has llenado todos los campos del formulario',
+    showConfirmButton: false,
+    timer: 4000
+  })
 }else{
   e.preventDefault();
   Swal.fire({
     icon: 'success',
     title: 'Compra realizada con exito',
+    text: 'En breve te contactaremos',
     showConfirmButton: false,
-    timer: 4000
+    timer: 6000
 })
-formularioCompra.submit();
-localStorage.clear();
-location.reload();
-location.href = '/'
+  localStorage.clear();
+  location.reload();
+  location.href = '/'
 }
 })
 }
@@ -115,5 +95,6 @@ function borrarItem(id) {
   totalCarrito = totalCarrito - carrito[id].precioCar;
   localStorage.setItem("totalCarrito", totalCarrito);
 }
+
 
 

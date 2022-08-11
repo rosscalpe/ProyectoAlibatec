@@ -25,9 +25,9 @@
 
                 <div class="medio-pago">
 
-                    <h3>Mercado Pago</h3>
+                    <button class="h3">Mercado Pago</button>
                     
-                    <h3>Efectivo</h3>
+                    <button class="h3">Efectivo</button>
                 </div>
             </div>
 
@@ -42,12 +42,12 @@
                     <input type="checkbox" class="newsletter" name="newsletter" id="newsletter" >
                     <label for="newsletter"> Recibir Información sobre nuevos Productos</label>
 
-                    <h2>Información de Envio</h2>
+                    <h2>Información de Envío</h2>
 
-                        <input type="text" class="grande" name="nombre" id="nombre" placeholder="Nombre y Apellido">
-                        <input type="text" class="grande" name="direccion" id="direccion" placeholder="Dirección Completa">
-                        <input type="text" class="grande" name="Provincia" id="Provincia" placeholder="Provincia">
-                        <input type="text" class="grande" name="cp" id="cp" placeholder="CP">
+                        <input type="text" class="grande" name="nombre" id="nombre" placeholder="Nombre y Apellido" required>
+                        <input type="text" class="grande" name="direccion" id="direccion" placeholder="Dirección Completa" required>
+                        <input type="text" class="grande" name="Provincia" id="Provincia" placeholder="Provincia" required>
+                        <input type="text" class="grande" name="cp" id="cp" placeholder="Código Postal" required>
 
             </div>
         </div>
@@ -65,7 +65,7 @@
 
                 <button type="submit" id="botonBorrar" class="botones botonBorrar">Vaciar Carrito</button>
             </div>
-            <a href="/"> << Volver al inicio </a>
+            <a href="/" class="volver-inicio"> << Volver al inicio </a>
 
             <button type="submit" id="botonEnviar" class="botones">Enviar Pedido</button>
         </form>
@@ -82,5 +82,16 @@
 <script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css">
 <script src="/JS/carrito.js"></script>
-<script src="/JS/compra.js"></script>
+<script>
+    let pago = document.querySelectorAll('.h3');
+    pago.forEach(p=>{
+        p.addEventListener('click',function(){
+            style = this.style;
+            style.backgroundColor = 'rgb(124,217,51)';
+            style.color = '#17191A';
+            style.border = '1px solid rgb(124,217,51)';
+            style.borderRadius = '5px';          
+        })
+    } )
+</script>
 </html>

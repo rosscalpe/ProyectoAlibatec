@@ -18,7 +18,7 @@
                 
                 <a href="/productos/add"><button class="button-pedido">Publica tu producto</button></a>
                 <a href="/user/userEdit/<%= user.id %> "><button class="button-pedido">Editar usuario</button></a>
-                <form action="/user/delete/<%= user.id %>?_method=DELETE" method="POST">
+                <form action="/user/delete/<%= user.id %>?_method=DELETE" method="POST" id="form-deleteU">
                     <button class="button-pedido">Eliminar Perfil</button>
                 </form>
 
@@ -29,4 +29,9 @@
     </main>
 </body>
 <%- include('./partials/footer.ejs')  %>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+<script src="/JS/deleteUser.js"></script>
+
 </html>
