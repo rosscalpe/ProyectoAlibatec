@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 
@@ -37,6 +38,6 @@ app.use('/user' , userRouter);
 
 // Hasta aca
 
-app.listen (4000, () => {
-    console.log ('servidor corriendo, Host 4000')
+app.listen (process.env.PORT || 3000, () => {
+    console.log('Server on port {process.env.PORT}');
 });
