@@ -47,8 +47,12 @@ window.onload = function() {
             }
             localStorage.setItem("totalCarrito", totalCarrito)            
         }             
-        
-        alert('Agregaste' + " " + titulo + " al carrito") 
+        Swal.fire({
+            icon: 'success',
+            title: 'Agregaste' + " " + titulo + " al carrito",
+            showConfirmButton: false,
+            timer: 2000
+        })
 
     })
 }   

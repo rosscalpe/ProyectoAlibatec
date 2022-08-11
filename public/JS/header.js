@@ -1,5 +1,5 @@
 // menu header responsive
-const headerMenu = document.querySelector('.header-menu > a')
+const headerMenu = document.getElementById('header-menu-a')
 const menu = document.querySelector('.menu')
 const menuItem = document.querySelector('.menu-item')
 
@@ -36,3 +36,4 @@ horizontalItemId2.addEventListener('mouseover', () => {
 horizontalItemId2.addEventListener('mouseout', () => {
     submenuCuenta.style.opacity = 0
 })
+

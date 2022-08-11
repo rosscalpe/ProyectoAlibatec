@@ -7,7 +7,7 @@
         </div>
         <div class="sus-mail">
             <input type="email" name="email" placeholder="Tu correo electrónico" class="insert-email">
-            <input type="submit" value="Suscribirse" class="enviar-sus"> 
+            <input type="submit" value="Suscribirse" id="btn-suscribirse" class="enviar-sus"> 
         </div>
     </div>
     <br>
@@ -55,5 +55,52 @@
     <div class="copyright">
         <h2>Copyright © 2021 | Tecnología y soluciones digitales</h2>
     </div>
-
 </footer>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+<script>
+const btnSuscribirse = document.getElementById('btn-suscribirse');
+const inputSuscribirse = document.querySelector('.insert-email');
+
+btnSuscribirse.addEventListener('click', () => {
+    if (inputSuscribirse.value === '') {
+        //alert('Ingrese un correo electronico')
+        Swal.fire({
+            title: 'Hey!',
+            text: 'Debes ingrasar un correo electrónico',
+            icon: 'warning',
+            confirmButtonText: 'Ok', 
+            iconColor: 'rgb(254,100,26)',
+            confirmButtonColor: 'rgb(0,171,240)',
+        })
+    } else if(inputSuscribirse.value.indexOf('@') === -1) {
+        Swal.fire({
+            title: 'Atención!',
+            text: 'Debes ingrasar un correo electrónico valido',
+            icon: 'warning',
+            confirmButtonText: 'Ok', 
+            iconColor: 'rgb(254,100,26)',
+            confirmButtonColor: 'rgb(0,171,240)',
+        })
+    } else {
+        const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+        })
+
+        Toast.fire({
+        icon: 'success',
+        title: 'Se ha suscrito correctamente'
+        })
+        inputSuscribirse.value = '';
+    }
+})
+</script>

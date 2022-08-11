@@ -23,6 +23,7 @@
     "nodemon": "^2.0.15",
     "sequelize": "^6.12.5",
     "sequelize-cli": "^6.3.0",
+    "sweetalert2": "^11.4.26",
     "validator": "^13.7.0"
   }
 }

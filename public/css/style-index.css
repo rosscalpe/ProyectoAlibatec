@@ -352,13 +352,10 @@ article.ofertas {
     }
     .destacados {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: space-around;
         width: 100%;
         padding: 20px;
-    }
-    .images {
-        width: 80%;
-        margin-left: 20px;
     }
     .producto {
         width: 30%;
@@ -540,7 +537,7 @@ article.ofertas {
     /*Estilo Productos destacados*/
     .destacados {
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
         width: 100%;
         padding: 30px;
     }
@@ -549,10 +546,6 @@ article.ofertas {
     }
     .tipo a {
         color: black;
-    }
-    .images {
-        width: 15vw;
-        margin-left: 25px;
     }
     .producto a {
         font-size: 24px;

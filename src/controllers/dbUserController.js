@@ -9,9 +9,14 @@ const dbUserController = {
     register: (req, res) => {
             res.render('register')
     },
+    userInDB: async (req, res) => {
+        const {email} = req.body;
+        db.Usuarios.findOne({email: email})
+        .then(user)
+    },
     processRegister: (req, res) => {
         let resultValidation = validationResult(req);
-
+        let {email} = req.body;
         if(resultValidation.errors.length)
             return res.render('register', {
                 errors: resultValidation.mapped(),
@@ -19,7 +24,7 @@ const dbUserController = {
             });
         
             db.Usuarios.findOne({
-                where: {email: req.body.email}
+                where: {email: email}
             }).then((userInDB)=>{
             
             if(userInDB) {

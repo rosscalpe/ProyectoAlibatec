@@ -53,15 +53,15 @@
                   <img class="images" src="<%=product[i].image %> " alt="a-watch">
               </div>
               <div class="precio-detalle">
-                  <div class="detalle-producto">
-                      <div class="tipo">
-                          <a href="/productos/detail/<%= product[i].id %>"><%= product[i].model%></a>
-                      </div>
-                   <a href="/productos/detail/<%= product[i].id %>" class="precio">$<%= product[i].price%></a>
+                <div class="detalle-producto">
+                  <div class="tipo">
+                    <a href="/productos/detail/<%= product[i].id %>"><%= product[i].model%></a>
                   </div>
-                  <div class="buy">
-                      <a href="/productos/detail/<%= product[i].id %>" class="buy-btn">Comprar</a>
-                  </div>
+                  <a href="/productos/detail/<%= product[i].id %>" class="precio">$<%= product[i].price%></a>
+                </div>
+                <div class="buy">
+                  <a href="/productos/detail/<%= product[i].id %>" class="buy-btn">Comprar</a>
+                </div>
               </div>
             </div>
           <% } %>
@@ -115,9 +115,7 @@
           <li><img src="/img/marcas/xiaomi-logo.png" /></li>
         </ul>
       </section>
-      
-      <h2 class="linea-separacion">En Oferta</h2>
-      
+
       <!--OFERTAS-->
       <article class="ofertas">
         <% for (let i = 0; i < product.length; i++) { %>
