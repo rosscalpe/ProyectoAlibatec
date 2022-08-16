@@ -1,20 +1,11 @@
 [
- {
-  "id": "eab59c16-1920-4161-be36-2438f58e60be",
-  "name": "pepe",
-  "lastname": "berta",
-  "email": "pepe@alibatec.com",
-  "password": "$2a$10$yY7b/QMaDaU/eRDSlzPNdOCw93ftr0Ym.rEyJTUGnUD.ybNOil/CW",
-  "tyc": "on",
-  "image": "image1639704192529_img.jpeg"
- },
- {
-  "id": "11",
-  "name": "Rosemary",
-  "lastname": "Calderon",
-  "email": "ross@unmail.com",
-  "password": "$2a$10$3BNtpE6ujRBbCBDAfJIlyuiP29I.12Tj5hMLTqgT8Gsp81DkN.SVu",
-  "tyc": "on",
-  "image": "image1639792417489_img.jpg"
- }
+  {
+    "id": "eab59c16-1920-4161-be36-2438f58e60be",
+    "name": "pepe",
+    "lastname": "berta",
+    "email": "pepe@alibatec.com",
+    "password": "$2a$10$yY7b/QMaDaU/eRDSlzPNdOCw93ftr0Ym.rEyJTUGnUD.ybNOil/CW",
+    "tyc": "on",
+    "image": "image1639704192529_img.jpeg"
+  }
 ]
