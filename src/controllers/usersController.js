@@ -77,6 +77,21 @@ const controller = {
 			}
 		});	
 	},
+	editUser: (req, res ) => {
+		const { params: id } = req.params;
+		const userToEdit = User.findByPK(id);
+		res.render('userEdit', { user: userToEdit });
+	},
+	updateUser: (req, res ) => {
+		const { body, params: id } = req.params;
+		const userToEdit = User.findByPK(id);
+		let userEdited = {
+			...body,
+			image: req.file.filename
+		}
+		User.editUser(id, userEdited);
+		res.redirect('/user/profile/' + id);
+	},
     profile: (req, res) => {
         let user = User.findByPK(req.params.id);
         res.render('profile', {user: req.session.userLogged});
@@ -85,6 +100,13 @@ const controller = {
 		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect('/');
+	},
+	delete: (req, res) => {
+		const { params: id } = req.params;
+		User.deleteUser(id);
+		res.clearCookie('userEmail');
+		req.session.destroy();
+		res.redirect('/');
 	}
 }
 

@@ -6,7 +6,12 @@
     <main>
         <div class="profile-complete">
             <div class="profile">
-                <img class="profile-avatar" src="<%= user.image %>" alt="">
+                <% if (user.image) { %>
+                    <img class="profile-avatar" src="/img/users/<%= user.image %>" alt="profile picture">
+                <% } else { %>
+                    <img class="profile-avatar" src="/img/users/image1638591528904_img.png" alt="profile picture">
+               <% } %>
+                
             </div>
             <div class="info-profile">
                 <h2>Datos Personales:</h2>

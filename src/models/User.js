@@ -1,5 +1,6 @@
 fs = require('fs');
 const path = require ('path');
+const uuid = require('uuid');
 
 const userFilepath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(userFilepath, 'utf-8'))
@@ -11,17 +12,8 @@ const User = {
     },
 
     writeFile(contents){
-        let fileContents = JSON.stringify(contents, null, " ");
+        let fileContents = JSON.stringify(contents, null, 2);
         fs.writeFileSync(userFilepath, fileContents)
-    },
-    idCreate: function (){
-        let allUser = this.getData();
-        let otherUser = allUser.pop();
-        if (otherUser){
-            return otherUser.id + 1;
-        }else{
-            return 1;
-        }
     },
     findByPK: function (id) {
         let allUser = this.getData(); 
@@ -36,18 +28,30 @@ const User = {
     create: function (userData) {
         let allUser = this.getData(); 
         let newUser = {
-            id: this.idCreate(),
+            id: uuid.v4(),
             ... userData
         }
         allUser.push (newUser) 
-        fs.writeFileSync(userFilepath, JSON.stringify (allUser, null, ' ')); 
+        fs.writeFileSync(userFilepath, JSON.stringify (allUser, null, 2), {encoding: 'utf-8'}); 
         return newUser; 
     },
-    delete: function(id){
+    editUser: function (id, userData) {
         let allUser = this.getData();
-        let finalUser = allUser.filter(oneUser => oneUser.id !== id);
-        finalUser.push(allUser);
-        fs.writeFileSync(userFilepath, JSON.stringify(finalUser, null, ' '));
+        let userFound = this.findByPK(id);
+        let userFoundIndex = allUser.indexOf(userFound);
+        let editedUser = {
+            id: id,
+            ...userData
+        }
+        allUser[userFoundIndex] = editedUser;
+        this.writeFile(allUser);
+        return editedUser;
+    },
+    deleteUser: function(id){
+        let allUser = this.getData();
+        let userFoundIndex = allUser.findIndex(oneUser => oneUser.id === id);
+        allUser.splice(userFoundIndex, 1);
+        this.writeFile(allUser);
         return true;
     }
 }

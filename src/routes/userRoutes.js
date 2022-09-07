@@ -36,9 +36,12 @@ router.get('/profile/:id', autenticacion , userController.profile);
 //Edicion Usuario
 // router.get('/userEdit/:id', dbUserController.userEdit);
 // router.put('/userEdit/:id', upload.single('image'), dbUserController.update);
+router.get('/userEdit/:id', userController.editUser);
+router.put('/userEdit/:id', upload.single('image'), userController.updateUser);
 
 //Eliminar Usuario
 // router.delete('/delete/:id', dbUserController.delete);
+router.delete('/delete/:id', userController.delete);
 
 //Logout
 //router.get('/logout', dbUserController.logout);

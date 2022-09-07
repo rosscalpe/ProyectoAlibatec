@@ -7,5 +7,15 @@
     "password": "$2a$10$yY7b/QMaDaU/eRDSlzPNdOCw93ftr0Ym.rEyJTUGnUD.ybNOil/CW",
     "tyc": "on",
     "image": "image1639704192529_img.jpeg"
+  },
+  {
+    "id": "058d99dc-3679-4d2f-8858-9aec00d15c18",
+    "name": "rosemary",
+    "lastname": "calderon",
+    "email": "rosemarycalderonp@gmail.com",
+    "password": "$2a$10$b3bPxw29G3VzstdNljMK8ekkChmiEXG7lubJLnEwBCAEz3rVOpS3C",
+    "category": "vendedor",
+    "tyc": "on",
+    "image": "image1662580758355_img.jpg"
   }
 ]
